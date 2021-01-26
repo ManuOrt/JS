@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css?_cacheOverride=1574773860125" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Varela+Round&display=swap">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Pelicula</title>
+</head>
+
+<body>
+
+
+    <h1>Nuestra Oferta Con cruceros Ortega</h1>
+    <div class="container">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="img/L_204410_l-200028-l-181325-l-151506-costa-deliziosa.jpg" class="card-img" alt="..." style="height:450px">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 id="film-title" class="card-title"></h5>
+                        <div class="card-text">
+
+                            <dl class="row">
+                                <dt class="col-sm-3">Puerto de Salida</dt>
+                                <dd id="film-synopsi" class="col-sm-9"></dd>
+
+                                <dt class="col-sm-3">Fecha de inicio</dt>
+                                <dd id="film-genre" class="col-sm-9">
+                                    Dibuixos
+                                </dd>
+
+                                <dt class="col-sm-3">Fecha de fin</dt>
+                                <dd id="film-premiere" class="col-sm-9">Sí</dd>
+
+                                <dt class="col-sm-3 text-truncate">Precio por persona:</dt>
+                                <dd id="film-age" class="col-sm-9"><img src="img/age-tp.png" style="width:20px" /></dd>
+
+                                <dt class="col-sm-3 text-truncate">Desembarques</dt>
+                                <dd id="film-sessions" class="col-sm-9">
+
+                                    <dt class="col-sm-3 text-truncate">Descripción</dt>
+                                    <dd id="film-description" class="col-sm-9">
+
+                                    </dd>
+                            </dl>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        //atributo: valor
+        var pelicula = {
+            "titol": "Cruceros Ortega",
+            "sinopsi": "La salida se efectuara desde Las Islas Baleares, Mallorca",
+            "genere": "17/5/2020",
+            "edat": "699€",
+            "estrena": "17/6/2020",
+            "sessions": ["Praga", "Cerdeña", "Maldibas", "Caribe"],
+            "description": ["Embarquen sobre una de nuestras 9000 ofertas y promociones de crucero entre má de 30 compañías marítimas como Ortega Cruceros"]
+        }
+
+        document.getElementById("film-title").innerHTML = pelicula.titol;
+        document.getElementById("film-synopsi").innerHTML = pelicula.sinopsi;
+        document.getElementById("film-genre").innerHTML = pelicula.genere;
+        document.getElementById("film-age").innerHTML = pelicula.edat;
+
+
+        document.getElementById("film-premiere").innerHTML = pelicula.estrena;
+        document.getElementById("film-description").innerHTML = pelicula.description;
+
+        var contenidorSessions = document.getElementById("film-sessions");
+
+        for (let hora of pelicula.sessions) {
+            contenidorSessions.innerHTML += `<span class="badge badge-info">${hora}</span> `;
+        }
+    </script>
+</body>
+
+</html>
